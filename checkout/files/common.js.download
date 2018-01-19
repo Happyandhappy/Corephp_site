@@ -1,0 +1,347 @@
+function Validator() {
+
+	this.isValid = function(value) {
+		return value.length > 1;
+	}
+	this.isValidEmail = function(value) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(value);
+	}
+
+	this.isValidInput = function(value) {
+		return value.length >= 2;
+	}
+
+	this.isValidInteger = function(value) {
+		return (parseFloat(value) == parseInt(value)) && !isNaN(value)
+	}
+
+	this.isValidCreditCardType = function(value) {
+		return this.isValidInteger(value) && value > 0 && value < 5
+	}
+
+	this.isValidCreditCardNumber = function(cardType, value) {
+		value = value.replace(/ /g, '');
+		if (!this.isValidInteger(value)) {
+			return false;
+		}
+		switch (parseInt(cardType)) {
+			case 3:
+				return value.length == 15;
+			default:
+				return value.length == 16;
+		}
+	}
+
+	this.isValidCreditCardexpirationDate = function(month, year) {
+		var date = new Date();
+		var m = date.getMonth() + 1;
+		var y = date.getFullYear();
+
+		return !(year == y && month < m)
+	}
+
+	this.isValidCreditCardValidationCode = function(value) {
+		return (value.length >= 3 && value.length <= 4);
+	}
+}
+
+function Form(form, settings) {
+	this.form = form;
+	this.settings = settings;
+	this.validator = new Validator();
+
+	function updateInput(input, isValid) {
+		var name = input.name;
+		if (isValid) {
+			if (name == 'expirationMonth') {
+				$('select[name="expirationYear"]').css('outlineColor', '');
+			}
+
+			input.style.borderColor = '';
+			input.style.outlineColor = '';
+			$(input).prev('span.error').remove();
+
+		} else {
+			if ($(input).prev('span.error').length == 0) {
+				var message = '';
+				switch (name) {
+					case 'firstName':
+						message = 'Please enter valid first name.';
+						break;
+					case 'lastName':
+						message = 'Please enter valid last name.';
+						break;
+					case 'email':
+						message = 'Please enter valid email adress.';
+						break;
+					case 'address':
+						message = 'Please enter valid address.';
+						break;
+					case 'city':
+						message = 'Please enter valid city.';
+						break;
+					case 'state':
+						message = 'Please select a state from dropdown.';
+						break;
+					case 'stateName':
+						message = 'Please enter a valid state';
+						break;
+					case 'zip':
+						message = 'Please enter a valid zip code.';
+						break;
+					case 'phone':
+						message = 'Please enter a valid phone number.';
+						break;
+					case 'cardType':
+						message = 'Please select a credit card type from dropdown.';
+						break;
+					case 'cardValidationCode':
+						message = 'Please enter a valid credit card validation code.';
+						break;
+					case 'cardNumber':
+						message = 'Please enter a valid credit card number.';
+						break;
+					case 'expirationMonth':
+						message = 'Please enter a valid expiration date.';
+						$('select[name="expirationYear"]').css('outlineColor', 'red');
+						break;
+				}
+				input.style.borderColor = 'red';
+				input.style.outlineColor = 'red';
+				$(input).before('<span class="error">' + message + '</span>');
+			}
+		}
+	}
+
+	if (settings.validateOnSubmit) {
+		$('input[type="submit"]', this.form).click({
+			form: this
+		}, function(event) {
+			var isValid = event.data.form.validate();
+			if (!isValid) {
+				alert('Please, fill all (*)required fields');
+				event.preventDefault();
+				return false;
+			}
+		});
+	}
+
+	if (settings.validateOnChange) {
+		$('input.required', this.form).change({
+			form: this
+		}, function(event) {
+			event.data.form.isInputValid(this);
+		});
+
+		$('select.required', this.form).change({
+			form: this
+		}, function(event) {
+			event.data.form.isInputValid(this);
+		}, {
+			form: this
+		});
+	}
+
+	this.isInputValid = function(input) {
+
+		if (input.style.display == 'none') {
+			updateInput(input, true);
+			return true;
+		}
+
+		var isValid = false;
+		switch (input.name) {
+			case 'email':
+				isValid = this.validator.isValidEmail(input.value);
+				break;
+			case 'cardType':
+				isValid = this.validator.isValidCreditCardType(input.value);
+				this.isInputValid($('input[name="cardNumber"]', this.form)[0]);
+				break;
+			case 'cardNumber':
+				isValid = this.validator.isValidCreditCardNumber($('[name="cardType"]').val(), input.value);
+				break;
+			case 'cardValidationCode':
+				isValid = this.validator.isValidCreditCardValidationCode(input.value);
+				break;
+			case 'expirationMonth':
+			case 'expirationYear':
+				isValid = this.validator.isValidCreditCardexpirationDate($('[name="expirationMonth"]').val(), $('[name="expirationYear"]').val());
+				updateInput($('[name="expirationMonth"]')[0], isValid);
+				return isValid;
+			default:
+				isValid = this.validator.isValid(input.value);
+				break;
+		}
+
+		updateInput(input, isValid);
+
+		return isValid;
+	}
+
+	this.validate = function() {
+		var isValid = true;
+
+		var inputs = $('input.required', form);
+		for (var cnt = 0; cnt < inputs.length; cnt++) {
+			var result = this.isInputValid(inputs[cnt]);
+			if (!result) {
+				isValid = result;
+			}
+		}
+
+		var selects = $('select.required', form);
+		for (var cnt = 0; cnt < selects.length; cnt++) {
+			var result = this.isInputValid(selects[cnt]);
+			if (!result) {
+				isValid = result;
+			}
+		}
+
+		return isValid;
+	}
+
+	this.setInputValues = function(inputValues) {
+
+		if (inputValues == null && this.settings.values != null) {
+			inputValues = this.settings.values;
+		}
+
+		if (inputValues == null) {
+			return;
+		}
+
+		for (var key in inputValues) {
+			$('input[name="' + key + '"]', this.form).val(inputValues[key]);
+			$('select[name="' + key + '"]', this.form).val(inputValues[key]);
+		}
+	}
+
+}
+
+function Loader(settings) {
+	this.custSearchId = settings.custSearchId;
+	this.interval = settings.interval;
+
+	var status = 0;
+
+	this.start = function() {
+		var params = {
+			'custSearchId': this.custSearchId
+		};
+
+		$.getJSON('/customer/search', params, function(data) {
+			status = data.status;
+			redirectPage(data);
+		});
+
+		updateStatus(this);
+	}
+
+	this.setStatus = function() {
+		var params = {
+			'custSearchId': this.custSearchId,
+			'getStatus': true
+		};
+
+		$.getJSON('/customer/search', params, function(data) {
+			status = data.status;
+		});
+	}
+
+	this.getStatus = function() {
+		return status;
+	}
+
+	function redirectPage(sender) {
+		if (sender.redirectUrl != undefined) {
+			window.location = sender.redirectUrl;
+		} else {
+			window.location = '/customer/renderReport?id=' + sender.custSearchId;
+		}
+	}
+
+	function updateStatus(sender) {
+		if (sender.getStatus() == 0) {
+			window.setTimeout(function(sender) {
+				sender.setStatus();
+				updateStatus(sender);
+			}, sender.interval, sender);
+		} else {
+			redirectPage(sender);
+		}
+	}
+}
+function doClearDefaults(theText) {
+	if (theText.value == theText.defaultValue) {
+		theText.value = ""
+	}
+}
+function doAddDefaults(theText) {
+	if (theText.value == "") {
+		theText.value = theText.defaultValue
+	}
+}
+
+
+$(document).ready(function() {
+	jQuery('a[rel="newWindow"]').each(function() {
+		jQuery(this).attr('target', '_blank');
+	});
+
+        // Check to see if we are at the checkout page, on the dev server
+        if (/ip5dev/.test(document.URL) && /checkout/.test(document.URL)) {
+
+            // Visual reminder we are in a testing environment
+            $('body').attr('style', 'border: 8px solid lime');
+
+            $('body').prepend('<div id="test-mode"><p style="text-align:center; color:red; font-weight:bold;">Test Mode</p></div>');
+
+            // Fetch query string
+            var queryString = decodeURI(window.location.search);
+
+            // Search for forced processor id
+            var paramString = queryString.match(/p(?:\[\d*\])?=/);
+
+            // Search for sku, which signifies RevenueWire transaction
+            var sku = queryString.match(/sku(?:\[\d*\])?=/);
+
+            if (paramString) {
+                paramString = paramString.toString();
+                var paramValue = queryString.match(/p(?:\[\d*\])?=\w*/).toString().replace(paramString, '');
+            }
+
+            if (sku) {
+                paramValue = '11';
+            }
+
+            if (paramValue) {
+
+                var processor;
+
+                switch (paramValue) {
+                    case '1':
+                        processor = 'ACH';
+                        break;
+                    case '10':
+                        processor = 'Stripe';
+                        break;
+                    case '11':
+                        processor = 'RevenueWire';
+                        break;
+                    case '12':
+                        processor = 'TransFirst';
+                        break;
+                    case '13':
+                        processor = 'Authorize.net';
+                        break;
+                    case '14':
+                        processor = 'GroupISO';
+                        break;
+                }
+
+                $('#test-mode').append('<div><p style="text-align:center; color:blue; font-weight:bold;">Processor: '+processor+'</p></div>');
+            }
+        }
+});

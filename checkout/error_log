@@ -1,0 +1,4 @@
+[05-Dec-2017 13:51:59 UTC] PHP Parse error:  syntax error, unexpected ''Location: http://speedyhunt.c' (T_ENCAPSED_AND_WHITESPACE) in /home/speedyhunt/public_html/checkout/test.php on line 77
+[05-Dec-2017 17:35:00 UTC] PHP Parse error:  syntax error, unexpected ''Location: http://speedyhunt.c' (T_ENCAPSED_AND_WHITESPACE) in /home/speedyhunt/public_html/checkout/index.php on line 77
+[05-Dec-2017 17:35:47 UTC] PHP Parse error:  syntax error, unexpected ''Location: http://speedyhunt.c' (T_ENCAPSED_AND_WHITESPACE) in /home/speedyhunt/public_html/checkout/index.php on line 77
+[05-Dec-2017 17:35:47 UTC] PHP Parse error:  syntax error, unexpected ''Location: http://speedyhunt.c' (T_ENCAPSED_AND_WHITESPACE) in /home/speedyhunt/public_html/checkout/index.php on line 77

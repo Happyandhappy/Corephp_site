@@ -1,0 +1,21 @@
+$(function(){
+	$('select[name="country"]').change(function(){
+		if(this.value=='US'){
+			$('input[name="stateName"]').hide();
+			$('select[name="state"]').show();
+
+		}else{
+			$('select[name="state"]').hide();
+			$('input[name="stateName"]').show();
+		}
+
+		var input = $('select[name="state"]')[0];
+		form.isInputValid(input);
+		input = $('input[name="stateName"]')[0];
+		form.isInputValid(input);
+	});
+        
+	if($('#iframeHere').length > 0){
+		$('#iframeHere').html('<iframe id="iframeCheckout" width="70" height="61" scroll="no" allowtransparency="true" frameborder="0" src="https://www.infopay.com/inc/thwate.php"></iframe>');
+	}
+});

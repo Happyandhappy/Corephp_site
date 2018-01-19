@@ -1,0 +1,109 @@
+[19-Dec-2017 07:06:45 UTC] PHP Fatal error:  Cannot redeclare base64url_encode() (previously declared in /home/speedyhunt/public_html/profile.php:7) in /home/speedyhunt/public_html/profile.php on line 179
+[04-Jan-2018 21:39:56 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/speedyhunt/public_html/jsonprofile.php on line 448
+[04-Jan-2018 22:47:24 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/speedyhunt/public_html/jsonprofile.php on line 479
+[04-Jan-2018 23:56:06 UTC] PHP Fatal error:  Only variables can be passed by reference in /home/speedyhunt/public_html/jsonprofile.php on line 504
+[06-Jan-2018 01:58:01 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/speedyhunt/public_html/jsonprofile.php on line 503
+[06-Jan-2018 01:58:04 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/speedyhunt/public_html/jsonprofile.php on line 503
+[06-Jan-2018 01:58:06 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/speedyhunt/public_html/jsonprofile.php on line 503
+[06-Jan-2018 01:59:15 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/speedyhunt/public_html/jsonprofile.php on line 504
+[06-Jan-2018 01:59:34 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/speedyhunt/public_html/jsonprofile.php on line 504
+[11-Jan-2018 18:37:19 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1848
+[11-Jan-2018 18:37:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1848
+[11-Jan-2018 18:38:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1831
+[11-Jan-2018 18:38:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1831
+[11-Jan-2018 18:38:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1824
+[11-Jan-2018 18:44:34 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1831
+[11-Jan-2018 18:46:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1852
+[11-Jan-2018 18:46:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1852
+[11-Jan-2018 18:47:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1852
+[11-Jan-2018 18:47:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 234
+[11-Jan-2018 18:50:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1869
+[13-Jan-2018 13:26:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1438
+[13-Jan-2018 21:03:17 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=27074 in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=27069 in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[14-Jan-2018 10:02:46 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[15-Jan-2018 20:52:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1133
+[15-Jan-2018 20:56:50 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 20:56:59 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 20:57:00 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 20:57:12 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 20:57:19 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 20:57:28 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profile.php on line 15
+[15-Jan-2018 21:33:08 UTC] PHP Parse error:  syntax error, unexpected ''firstS' (T_ENCAPSED_AND_WHITESPACE), expecting ')' in /home/speedyhunt/public_html/profile.php on line 234
+[15-Jan-2018 21:33:08 UTC] PHP Parse error:  syntax error, unexpected ''firstS' (T_ENCAPSED_AND_WHITESPACE), expecting ')' in /home/speedyhunt/public_html/profile.php on line 234
+[15-Jan-2018 21:48:23 UTC] PHP Parse error:  syntax error, unexpected '$username' (T_VARIABLE) in /home/speedyhunt/public_html/profile.php on line 145
+[15-Jan-2018 21:48:26 UTC] PHP Parse error:  syntax error, unexpected '$username' (T_VARIABLE) in /home/speedyhunt/public_html/profile.php on line 145
+[15-Jan-2018 21:48:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 84
+[15-Jan-2018 21:56:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1128
+[15-Jan-2018 21:59:44 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 525
+[15-Jan-2018 22:03:10 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 84
+[16-Jan-2018 00:35:11 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 522
+[16-Jan-2018 00:35:12 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1126
+[16-Jan-2018 06:16:59 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 231
+[16-Jan-2018 06:17:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 958
+[16-Jan-2018 07:55:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 08:57:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1994
+[16-Jan-2018 08:57:49 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1994
+[16-Jan-2018 09:54:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2013
+[16-Jan-2018 09:54:57 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1720
+[16-Jan-2018 09:57:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 72
+[16-Jan-2018 10:02:20 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1751
+[16-Jan-2018 10:03:09 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1724
+[16-Jan-2018 10:10:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2284
+[16-Jan-2018 15:40:43 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:40:49 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:41:29 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:41:48 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:41:52 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/request_data.php on line 23
+[16-Jan-2018 15:41:52 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=6529 in /home/speedyhunt/public_html/request_data.php on line 23
+[16-Jan-2018 15:41:52 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/request_data.php on line 23
+[16-Jan-2018 15:42:28 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:42:51 UTC] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
+[16-Jan-2018 15:42:53 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 15:42:54 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 223
+[16-Jan-2018 15:44:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 15:44:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 15:44:29 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 223
+[16-Jan-2018 15:46:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 15:46:18 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 223
+[16-Jan-2018 15:46:18 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 223
+[16-Jan-2018 15:46:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 515
+[16-Jan-2018 15:46:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 1102
+[16-Jan-2018 18:37:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[16-Jan-2018 18:39:47 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ')' in /home/speedyhunt/public_html/profile.php on line 223
+[16-Jan-2018 18:39:48 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/speedyhunt/public_html/profile.php on line 1186
+[16-Jan-2018 20:05:52 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or '$' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 636
+[16-Jan-2018 20:06:04 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ',' or ';' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1227
+[16-Jan-2018 20:08:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 1129
+[16-Jan-2018 20:11:07 UTC] PHP Parse error:  syntax error, unexpected ''l' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 222
+[16-Jan-2018 20:32:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2377
+[16-Jan-2018 20:34:04 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2377
+[16-Jan-2018 20:34:41 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2377
+[16-Jan-2018 20:35:11 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2291
+[16-Jan-2018 20:35:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2377
+[16-Jan-2018 20:36:34 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2377
+[16-Jan-2018 20:40:02 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/speedyhunt/public_html/request_data.php on line 23
+[16-Jan-2018 20:48:06 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2380
+[16-Jan-2018 21:14:40 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2161
+[16-Jan-2018 21:15:16 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/speedyhunt/public_html/profileWorkingCopy.php on line 2161
+[17-Jan-2018 01:28:09 UTC] PHP Parse error:  syntax error, unexpected ''st' (T_ENCAPSED_AND_WHITESPACE), expecting ')' in /home/speedyhunt/public_html/profile.php on line 222
+[17-Jan-2018 01:29:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/profile.php on line 82
+[17-Jan-2018 20:41:06 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/request_data.php on line 23
+[17-Jan-2018 20:41:06 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=672 in /home/speedyhunt/public_html/request_data.php on line 23
+[17-Jan-2018 20:41:06 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/request_data.php on line 23
+[17-Jan-2018 22:00:12 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/speedyhunt/public_html/request_data.php on line 23
+[18-Jan-2018 00:55:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/speedyhunt/public_html/request_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=14549 in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): Error while reading greeting packet. PID=14541 in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 03:52:24 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2006): MySQL server has gone away in /home/speedyhunt/public_html/contact_data.php on line 23
+[18-Jan-2018 19:58:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/speedyhunt/public_html/search.php on line 88
+[18-Jan-2018 23:18:34 UTC] PHP Parse error:  syntax error, unexpected ''houseNumbe' (T_ENCAPSED_AND_WHITESPACE), expecting ')' in /home/speedyhunt/public_html/profile.php on line 222
+[18-Jan-2018 23:18:34 UTC] PHP Parse error:  syntax error, unexpected ''houseNumbe' (T_ENCAPSED_AND_WHITESPACE), expecting ')' in /home/speedyhunt/public_html/profile.php on line 222
+[19-Jan-2018 01:41:15 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2002): Connection refused in /home/speedyhunt/public_html/request_data.php on line 23

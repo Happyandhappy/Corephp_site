@@ -1,0 +1,4 @@
+[23-Oct-2017 17:33:25 UTC] PHP Fatal error:  Call to a member function query() on null in /home/speedyhunt/public_html/report/index.php on line 101
+[23-Oct-2017 17:34:26 UTC] PHP Fatal error:  Call to a member function query() on null in /home/speedyhunt/public_html/report/index.php on line 101
+[23-Oct-2017 17:34:51 UTC] PHP Fatal error:  Call to a member function query() on null in /home/speedyhunt/public_html/report/index.php on line 101
+[23-Oct-2017 17:34:54 UTC] PHP Fatal error:  Call to a member function query() on null in /home/speedyhunt/public_html/report/index.php on line 101

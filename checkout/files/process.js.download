@@ -1,0 +1,33 @@
+$(document).ready(function() {
+
+	// $('body').append('<div style="display: none;" id="checkout-modal" class="checkout-modal"><span class="checkout-processing">Processing...</span></div>');
+    $('body').append('<div class="cl-modal" id="checkout-modal" style="display: none;"><div class="cl-container"><div class="cl-spinner"></div><div class="cl-text">Processing...</div></div></div>');
+
+	window.onpageshow = function(event) {
+		if (event.persisted) {
+		    $('#checkout-modal').hide();
+		    location.reload();
+		}
+	};
+
+	// Update the name of the submit button in order to be able to submit the DOM object button instead of jQuery (for line 23)
+	// Whithout this we'll get a js error (undefined method submit)
+	$('input[name="submit"]').attr('name', 'submitted');
+	$('form').submit(function(event) {
+		form = this;
+
+		$('input[type="submit"]').attr('disabled', true).addClass('disabled').val('Processing');
+		$('#checkout-modal').show();
+
+        if(typeof form.submit === 'function') {
+            event.preventDefault();
+        } else {
+            return true;
+        }
+
+		// The intention of this is to show the loader on iOS devices (wasn't working without it)
+		setTimeout(function(){
+			form.submit();
+		}, 1000);
+	});
+});

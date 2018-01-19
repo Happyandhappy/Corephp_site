@@ -1,0 +1,209 @@
+/*
+ * Copied from /tspec/shared/js/common.js with a few customizations:
+ * - added border-color to parent div of select element
+ * - insert error message before the parent div
+ */
+function Form(form, settings) {
+	this.form = form;
+	this.settings = settings;
+	this.validator = new Validator();
+
+	function updateInput(input, isValid) {
+		var name = input.name;
+		if (isValid) {
+			if (name == 'expirationMonth') {
+				$('select[name="expirationYear"]').css('outlineColor', '');
+			}
+
+			input.style.borderColor = '';
+			input.style.outlineColor = '';
+			$(input).prev('span.hint--error').remove();
+
+                        // custom code for eVerify checkout
+                        $(input).parent().css({'border-color':''});
+                        $(input).parent().prev('span.hint--error').remove();
+
+		} else {
+			if ($(input).prev('span.hint--error').length == 0) {
+				var message = '';
+				switch (name) {
+					case 'firstName':
+						message = 'Please enter valid first name';
+						break;
+					case 'lastName':
+						message = 'Please enter valid last name';
+						break;
+					case 'email':
+						message = 'Please enter valid email adress';
+						break;
+					case 'address':
+						message = 'Please enter valid address';
+						break;
+					case 'city':
+						message = 'Please enter valid city';
+						break;
+					case 'state':
+						message = 'Please select a state from dropdown';
+						break;
+					case 'stateName':
+						message = 'Please enter a valid state';
+						break;
+					case 'zip':
+						message = 'Please enter a valid zip code';
+						break;
+					case 'phone':
+						message = 'Please enter a valid phone number';
+						break;
+					case 'cardType':
+						message = 'Please select a credit card type from dropdown';
+						break;
+					case 'cardValidationCode':
+						message = 'Please enter a valid credit card validation code';
+						break;
+					case 'cardNumber':
+						message = 'Please enter a valid credit card number';
+						break;
+					case 'expirationMonth':
+						message = 'Please enter a valid expiration date';
+						break;
+					    case 'rebillAgree':
+						message = 'Please agree to our billing terms';
+						break;
+				}
+				input.style.borderColor = 'red';
+				input.style.outlineColor = 'red';
+
+                                // custom code for eVerify checkout
+                                if (input.tagName == 'SELECT') {
+//                                    $(input).parent().prev('span.hint--error').remove();
+                                    $(input).parent().css({'border-color':'red'});
+//                                    $(input).parent().before('<span class="hint--top hint--error hint--always" data-hint="'+ message + '"></span>');
+                                }
+//                                else {
+                                    $(input).before('<span class="hint--top hint--error hint--always" data-hint="'+ message + '"></span>');
+//                                }
+			}
+		}
+	}
+
+	this.isValidCheckbox = function(selector) {console.log('inside')
+	    return selector.prop("checked");
+	}
+
+	if (settings.validateOnSubmit) {
+		$('input[type="submit"]', this.form).click({
+			form: this
+		}, function(event) {
+			var isValid = event.data.form.validate();
+			if (!isValid) {
+                                // This is redudant
+				//alert('Please, fill all (*)required fields');
+                                $('html, body').animate({scrollTop: $("span.hint--error").first().parent().offset().top - 150}, 500);
+				event.preventDefault();
+				return false;
+			}
+		});
+	}
+
+	if (settings.validateOnChange) {
+		$('input.required', this.form).change({
+			form: this
+		}, function(event) {
+			event.data.form.isInputValid(this);
+		});
+
+		$('select.required', this.form).change({
+			form: this
+		}, function(event) {
+			event.data.form.isInputValid(this);
+		}, {
+			form: this
+		});
+	}
+
+	this.isInputValid = function(input) {
+
+		if (input.style.display == 'none') {
+			updateInput(input, true);
+			return true;
+		}
+
+		var isValid = false;
+		switch (input.name) {
+			case 'email':
+				isValid = this.validator.isValidEmail(input.value);
+				break;
+			case 'cardType':
+				isValid = this.validator.isValidCreditCardType(input.value);
+				this.isInputValid($('input[name="cardNumber"]', this.form)[0]);
+				break;
+			case 'cardNumber':
+				isValid = this.validator.isValidCreditCardNumber($('[name="cardType"]').val(), input.value);
+				break;
+			case 'cardValidationCode':
+				isValid = this.validator.isValidCreditCardValidationCode(input.value);
+				break;
+			case 'expirationMonth':
+			case 'expirationYear':
+				isValid = this.validator.isValidCreditCardexpirationDate($('[name="expirationMonth"]').val(), $('[name="expirationYear"]').val());
+				updateInput($('[name="expirationMonth"]')[0], isValid);
+				return isValid;
+			case 'rebillAgree':
+				isValid = this.isValidCheckbox($('#rebillAgreeDiv'));
+				break;
+			default:
+				isValid = this.validator.isValid(input.value);
+				break;
+		}
+
+		updateInput(input, isValid);
+
+		return isValid;
+	}
+
+	this.validate = function() {
+		var isValid = true;
+
+		var inputs = $('input.required', form);
+		for (var cnt = 0; cnt < inputs.length; cnt++) {
+			var result = this.isInputValid(inputs[cnt]);
+			if (!result) {
+				isValid = result;
+			}
+		}
+
+		var selects = $('select.required', form);
+		for (var cnt = 0; cnt < selects.length; cnt++) {
+			var result = this.isInputValid(selects[cnt]);
+			if (!result) {
+				isValid = result;
+			}
+		}
+
+		return isValid;
+	}
+
+	this.setInputValues = function(inputValues) {
+
+		if (inputValues == null && this.settings.values != null) {
+			inputValues = this.settings.values;
+		}
+
+		if (inputValues == null) {
+			return;
+		}
+
+		for (var key in inputValues) {
+			$('input[name="' + key + '"]', this.form).val(inputValues[key]);
+			$('select[name="' + key + '"]', this.form).val(inputValues[key]);
+		}
+	}
+
+}
+
+$(document).ready(function() {
+    $('form').submit(function() {
+	window.onbeforeunload = '';
+	return true;
+    });
+});
